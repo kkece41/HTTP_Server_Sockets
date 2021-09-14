@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "types.h": "c",
+        "signal.h": "c",
+        "error.h": "c",
+        "fcntl.h": "c"
+    }
+}

@@ -37,12 +37,17 @@ int main(int argc, char** argv)
 
     while(1)
     {  
-        //struct sockaddr_in addr;
-        //socklen_t addr_len;
+        struct sockaddr_in addr;
+        socklen_t addr_len;
+        char client_addr[MAXLINE+1];
 
+    
         printf("Waiting for a connection on port %d\n", SERVER_PORT);
         fflush(stdout);
-        connfd = accept(listenfd, (struct sockaddr*)NULL, NULL);
+        connfd = accept(listenfd, (struct sockaddr*)&addr, &addr_len);
+
+        inet_ntop(AF_INET, &addr,client_addr, MAXLINE); //Network to presentation address
+        printf("Client Addres is %s\n",client_addr);
 
         memset(recvline, 0, MAXLINE);
 

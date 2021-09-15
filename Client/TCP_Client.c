@@ -78,6 +78,7 @@ int main(int argc, char** argv)
     if(n < 0) 
     error_n_die("Read failed");
 
+    close(sockfd);
 
     exit(0);
 
